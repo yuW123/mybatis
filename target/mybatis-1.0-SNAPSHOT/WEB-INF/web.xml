@@ -31,6 +31,12 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:spring-core.xml</param-value>
   </context-param>
+
+  <context-param>
+    <param-name>webAppRootKey</param-name>
+    <param-value>webApp.root</param-value>
+  </context-param>
+
   <!-- Servlet Context Listener ======================================= -->
 
   <!--
@@ -54,6 +60,15 @@
 
 
   <!-- URL space mappings ============================================= -->
+  <!--druid-->
+  <servlet>
+    <servlet-name>DruidStatView</servlet-name>
+    <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DruidStatView</servlet-name>
+    <url-pattern>/druid/*</url-pattern>
+  </servlet-mapping>
 
   <!-- spring-mvc -->
   <servlet>

@@ -5,12 +5,11 @@
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/weyu_test"/>
-        <property name="user" value="root"/>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="filters" value="stat"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/weyu_test"/>
+        <property name="username" value="root"/>
         <property name="password" value="yu12"/>
-        <property name="maxStatements" value="0"/>
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

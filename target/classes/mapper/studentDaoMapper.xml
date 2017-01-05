@@ -6,7 +6,7 @@
     <select id="loadStudentById" parameterType="int" resultType="com.wenyu.mybatis.bean.Student">
         SELECT * FROM student WHERE studentId=#{id}
     </select>
-    <select id="queryStudent" parameterType="java.util.Map" resultType="com.wenyu.mybatis.bean.Student">
+    <select id="queryStudent" resultType="com.wenyu.mybatis.bean.Student">
         SELECT * FROM student WHERE studentName=#{studentName}
     </select>
 </mapper>
