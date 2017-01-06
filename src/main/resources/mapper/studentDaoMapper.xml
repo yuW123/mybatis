@@ -7,6 +7,11 @@
         SELECT * FROM student WHERE studentId=#{id}
     </select>
     <select id="queryStudent" resultType="com.wenyu.mybatis.bean.Student">
-        SELECT * FROM student WHERE studentName=#{studentName}
+        SELECT * FROM student WHERE TRUE
+        <if test="studentName != null and studentName != ''">
+            AND
+            studentName=#{studentName}
+        </if>
+
     </select>
 </mapper>
