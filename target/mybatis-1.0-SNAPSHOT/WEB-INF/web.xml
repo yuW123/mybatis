@@ -32,10 +32,10 @@
     <param-value>classpath:spring-core.xml</param-value>
   </context-param>
 
-  <context-param>
-    <param-name>webAppRootKey</param-name>
-    <param-value>webApp.root</param-value>
-  </context-param>
+  <!--<context-param>-->
+    <!--<param-name>webAppRootKey</param-name>-->
+    <!--<param-value>webApp.root</param-value>-->
+  <!--</context-param>-->
 
   <!-- Servlet Context Listener ======================================= -->
 

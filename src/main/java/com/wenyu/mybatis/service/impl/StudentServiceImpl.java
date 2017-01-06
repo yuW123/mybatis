@@ -6,6 +6,8 @@ import com.wenyu.mybatis.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.List;
 import java.util.Map;
 
@@ -24,5 +26,15 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> query(Map<String, Object> map) {
         List<Student> students = studentDao.queryStudent(map);
         return students;
+    }
+
+    @PostConstruct
+    public void Start() {
+        System.out.print("Start------------------------++++++++++++++>>>>>>>>>");
+    }
+
+    @PreDestroy
+    public void close() {
+        System.out.print("Close------------------------++++++++++++++>>>>>>>>>");
     }
 }

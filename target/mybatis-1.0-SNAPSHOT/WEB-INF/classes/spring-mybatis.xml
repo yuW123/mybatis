@@ -12,9 +12,15 @@
         <property name="password" value="yu12"/>
     </bean>
 
+    <!-- 分页拦截器 -->
+    <bean id="pageInterceptor" class="com.wenyu.mybatis.filter.PageFilter">
+        <property name="databaseType" value="mysql"/>
+    </bean>
+
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath*:mapper/*.xml"/>
+        <property name="plugins" ref="pageInterceptor"/>
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
